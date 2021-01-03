@@ -8,7 +8,9 @@ int main () {
     int returnSize;
 
     int *result = twoSum(nums, NUMS_COUNT, target, &returnSize);
-    printf("[%d, %d]", result[0], result[1]);
+    for (int i = 0; i < returnSize; i++) {
+        printf("twoSum[%d]: %d\n", i, result[i]);
+    }
 
     free(result);
 
