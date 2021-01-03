@@ -29,6 +29,7 @@ int *twoSum(int *nums, int numsSize, int target, int *returnSize){
             if (nums[i] + nums[j] == target) {
                 returnValues[0] = i;
                 returnValues[1] = j;
+                break;
             }
         }
     }
