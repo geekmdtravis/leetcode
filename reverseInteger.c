@@ -22,7 +22,7 @@ int reverse(int x) {
     int numDigits = isNegative ? numChars - 1 : numChars;
 
     char reversedString[numChars + 1];
-    memset(reversedString, '\0', numChars);
+    memset(reversedString, '\0', numChars + 1);
 
     if (isNegative) 
         reversedString[0] = '-';
@@ -35,3 +35,4 @@ int reverse(int x) {
     long reversed = atol(reversedString);
     return (reversed > INT_MAX || reversed < INT_MIN) ? 0 : (int)(reversed);
 }
+
