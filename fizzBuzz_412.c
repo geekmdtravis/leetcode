@@ -11,20 +11,21 @@ int main() {
     return 0;
 }
 
-char **fizzBuzz(int n, int *returnSize) {
+char **fizzBuzz(int n, int *returnSize){
     *returnSize = n;
-    char **retVal = malloc(sizeof(char*) * n);
-    for (int i = 0; i <= n; i++) {
-        retVal[++i] = malloc(sizeof(char) * 12);
-        if (i % 3 == 0 && i % 5 == 0)
-            sprintf(retVal[++i], "%s", "FizzBuzz");
-        else if (i % 3 == 0)
-            sprintf(retVal[++i], "%s", "Fizz");
-        else if (i % 5 == 0)
-            sprintf(retVal[++i], "%s", "Buzz");
-        else {
-            sprintf(retVal[++i], "%d", i);
+    char **ret = malloc(n * sizeof(char*));
+    for (int i = 1; i <= n; i++) {
+        if (i % 3 == 0 && i %5 == 0) 
+            *ret = "FizzBuzz";
+        else if (i % 3 == 0) 
+            *ret = "Fizz";
+        else if (i % 5 == 0) 
+            *ret = "Buzz";
+        else { 
+            *ret = malloc(12 * sizeof(char));
+            sprintf(*ret, "%d", i);
         }
+        ret++;
     }
-    return retVal;
+    return ret - n;
 }
