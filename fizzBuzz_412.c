@@ -6,7 +6,10 @@ char **fizzBuzz(int n, int *returnSize);
 
 int main() {
     int returnSize;
-    char **fizzBuzzed = fizzBuzz(15, &returnSize);
+    char **fizzBuzzed = fizzBuzz(3369, &returnSize);
+
+    for (int i = 0; i < returnSize; i++) 
+        printf("%s\n", fizzBuzzed[i]);
 
     return 0;
 }
